@@ -1,0 +1,104 @@
+<div class=" content">
+    <div class=" row">
+        <div class=" col-12">
+            <div class=" card card-chart">
+                <div class=" card-header">
+                    <div class="row g-0">
+                        <div class="col-md-4 mb-3" style="max-width: 13rem">
+                            <a>
+                                <img src="assets/public/upload/{{candidate.profile_image}}" class="card-img-top" alt="">
+                            </a>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="row">
+                                <div class=" td-actions text-right">
+                                    <button (click)="clicled()" class=" btn btn-link" type="button" placement="left"
+                                        ngbTooltip="Bilgileri Gücelle" container="body">
+                                        <i class=" tim-icons icon-pencil"> </i>
+                                    </button>
+                                </div>
+                                <div class="card-body col-md-4">
+                                    <p class="card-text"><b style="color: indianred;">İsim :</b> {{candidate.name}}</p>
+                                    <p class="card-text"><b style="color: indianred;">Alarm Tarihi :</b>
+                                        {{candidate.alarm}}</p>
+                                    <p class="card-text"><b style="color: indianred;">Alarm Notu :</b>
+                                        {{candidate.alarmNote}}</p>
+                                    <p class="card-text"><b style="color: indianred;">Tel No :</b> {{candidate.no}}</p>
+                                    <p class="card-text"><small class="text-muted">Son Güncelleme :
+                                            {{candidate.updatedAt}}</small></p>
+                                </div>
+                                <div class="card-body col-md-6">
+                                    <p class="card-text"><b style="color: indianred;">Linkedin Adresi :</b>
+                                        {{candidate.linkedin}}</p>
+                                    <p class="card-text"><b style="color: indianred;">E-Posta Adresi :</b>
+                                        {{candidate.email}}</p>
+                                    <p class="card-text"><b style="color: indianred;">Eklenme Tarihi :</b>
+                                        {{candidate.cretedAt}}</p>
+                                </div>
+                                <div class="card-body col-md-1">
+                                    <button class="btn btn-fill btn-danger" type="button"
+                                        (click)="candidateDelete()">Sil</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="this.isClicked==true" id="showEditMenu">
+                        <form #frm="ngForm" (ngSubmit)="save()">
+                            <div class="row">
+                                <div class="col-md-5 pr-md-1">
+                                    <div class="form-group">
+                                        <label> İsim </label>
+                                        <input class=" form-control" placeholder="Adı Soyadı" type="text" name="name"
+                                            [(ngModel)]="candidate.name" />
+                                    </div>
+                                </div>
+                                <div class="col-md-5 pr-md-1">
+                                    <div class="form-group">
+                                        <label> E-Posta </label>
+                                        <input class="form-control" placeholder="mail@email.com" type="email"
+                                            name="email" [(ngModel)]="candidate.email" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5 pr-md-1">
+                                    <div class="form-group">
+                                        <label> Linkedin </label>
+                                        <input class="form-control" placeholder="linkedin URL" type="url"
+                                            name="linkedin" [(ngModel)]="candidate.linkedin" />
+                                    </div>
+                                </div>
+                                <div class="col-md-5 pr-md-1">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1"> Alarm Notu </label>
+                                        <input class="form-control" placeholder="Alarm Notu" type="text"
+                                            name="alarmNote" [(ngModel)]="candidate.alarmNote" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 pr-md-1">
+                                    <div class="form-group">
+                                        <label> Alarm Tarihi </label>
+                                        <input class="form-control" placeholder="Alarm Tarihi" type="datetime-local"
+                                            name="alarm" [(ngModel)]="candidate.alarm" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pr-md-1">
+                                    <div class="form-group">
+                                        <label> Telefon Numarası </label>
+                                        <input class="form-control" placeholder="Tel no" type="tel" name="no"
+                                            [(ngModel)]="candidate.no" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-fill btn-danger" type="submit">Kaydet</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
