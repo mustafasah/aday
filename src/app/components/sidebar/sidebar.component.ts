@@ -26,12 +26,7 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-chart-pie-36",
     class: ""
   },
-  {
-    path: "/icons",
-    title: "Icons",
-    icon: "icon-atom",
-    class: ""
-  },
+
   {
     path: "/maps",
     title: "Maps",
